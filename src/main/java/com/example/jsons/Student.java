@@ -43,8 +43,6 @@ class Person {
         student = new Student(null);
     }
 
-    
-
     private Person() {
     }
 
@@ -53,55 +51,38 @@ class Person {
         return Arrays.asList(name, String.valueOf(age), student.toString()).toString();
     }
 
-
-
     public String getName() {
         return name;
     }
-
-
 
     public void setName(String name) {
         this.name = name;
     }
 
-
-
     public int getAge() {
         return age;
     }
-
-
 
     public void setAge(int age) {
         this.age = age;
     }
 
-
-
     public Student getStudent() {
         return student;
     }
-
-
 
     public void setStudent(Student student) {
         this.student = student;
     }
 
-
-
     public List<Person> getItens() {
         return itens;
     }
-
-
 
     public void setItens(List<Person> itens) {
         this.itens = itens;
     }
 
-    
 }
 
 // Demonstra a serialização/desserialização de objetos Java usando
@@ -115,8 +96,8 @@ class Main {
                 .setPrettyPrinting()
                 .serializeNulls()
                 .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                .create(); 
-                // Cria uma instância Gson
+                .create();
+        // Cria uma instância Gson
 
         // Serialize o objeto – Converta o objeto `Person` em uma string JSON
         String jsonString = gson.toJson(person);
@@ -127,18 +108,15 @@ class Main {
         // `Person`
         Person p = gson.fromJson(jsonString, Person.class);
 
-        
-        System.out.println("\nConverting JSON string to Person object:\n"+ p.toString());
-
+        System.out.println("\nConverting JSON string to Person object:\n" + p.toString());
 
         System.out.println("Name: " + p.getName());
 
-
         // for (Person item : p.getItens()) {
-        //     System.out.println("----------------------------------------------------------");
-        //     System.out.println("   Name: " + item.getName());
-        //     System.out.println("   Age: " + item.getAge());
-        //     System.out.println("   Student: " + item.getStudent());
+        // System.out.println("----------------------------------------------------------");
+        // System.out.println(" Name: " + item.getName());
+        // System.out.println(" Age: " + item.getAge());
+        // System.out.println(" Student: " + item.getStudent());
         // }
     }
 }

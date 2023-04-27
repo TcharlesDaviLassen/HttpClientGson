@@ -80,7 +80,7 @@ public final class App {
                 Gson gson = new GsonBuilder()
                                 .setPrettyPrinting()
                                 .serializeNulls()
-                                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                                // .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
                                 .setLenient()
                                 .create();
 
@@ -92,18 +92,28 @@ public final class App {
                 // Desserialize o objeto – Converta a string JSON de volta para o objeto`
                 String json = gson.fromJson(jsonString, String.class);
                 
-                System.out.println("Start point: " + json);
-                json = json.substring(1, json.length() - 1);
-                System.out.println("Get without \": " + json);
-                json = json.replaceAll("\\\\\"", "\"");
-                System.out.println("Valid: " + json);
+                // System.out.println("Start point: " + json);
+                // json = json.substring(1, json.length() - 1);
+                // System.out.println("Get without \": " + json);
+                // json = json.replaceAll("\\\\\"", "\"");
+                // System.out.println("Valid: " + json);
 
                 // JsonReader reader = new JsonReader(new StringReader(json));
                 // reader.setLenient(true);        
-                EntityFeriaDTO p = gson.fromJson(json, EntityFeriaDTO.class);
-                System.out.println("\nConverting JSON string to object:\n" + p.getDate().toString().trim());
-                System.out.println("\nConverting JSON string to object:\n" + p.getName().toString().trim());
-                System.out.println("\nConverting JSON string to object:\n" + p.getType().toString().trim());
+           
+
+                JsonArray jsons = gson.fromJson(data, JsonArray.class);
+                System.out.println("\n");
+                for (JsonElement jsonElement : jsons) {
+                        EntityFeriaDTO p = gson.fromJson(jsonElement, EntityFeriaDTO.class);
+                        System.out.println(p.toString());
+
+                        // System.out.println(p.getDate().toString().trim());
+                        // System.out.println(p.getName().toString().trim());
+                        // System.out.println(p.getType().toString().trim());
+                }
+
+
 
                 // System.out.println("Name: " + p.getDate());
 
