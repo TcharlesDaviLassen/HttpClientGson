@@ -25,8 +25,8 @@ public class testeSinc {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         // cliente HTTP
-        // HttpClient client = HttpClient.newHttpClient();
-        // HttpRequest request = (HttpRequest) HttpRequest.newBuilder();
+            // HttpClient client = HttpClient.newHttpClient();
+            // HttpRequest request = (HttpRequest) HttpRequest.newBuilder();
 
         //// Exemplo Síncrono
         HttpClient client = HttpClient.newBuilder().build();
@@ -46,31 +46,16 @@ public class testeSinc {
         // Cria a instancia pro formato JSON
         // EntityFeriaDTO feriads = new EntityFeriaDTO("99/99/9999","JONH", "nacional");
 
-        // String urlParaChamada = URL_POST ;
-        // URL url = new URL(urlParaChamada);
-        // HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
-        //// Deserializa atraves do BufferedReader
-        // BufferedReader resposta = new BufferedReader(new
-        // InputStreamReader((conexao.getInputStream())));
-        // String jsonEmString = Util.converteJsonEmString(resposta);
-        // System.out.println("urlParaChamada: "+ jsonEmString);
-
-        // Type collectionType = new TypeToken<Collection<EntityFeriaDTO>>(){}.getType();
-        // Collection<EntityFeriaDTO> enums = gson.fromJson(jsonEmString, collectionType);
-        // System.out.println("enums" + enums);
-
-
-
         // Cria uma instância Gson
-        // Gson gson = new GsonBuilder()
-        //         .setPrettyPrinting() //// Deixa a informação mais formatada.
-        //         // .serializeNulls() 
-        //         .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-        //         // .setLenient() // sede a permisão pra aceitar as informações.
-        //         .create();
+        Gson gson = new GsonBuilder()
+                .setPrettyPrinting() //// Deixa a informação mais formatada.
+                .serializeNulls() 
+                // .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                // .setLenient() // sede a permisão pra aceitar as informações.
+                .create();
 
-        final GsonBuilder gsonBuilder = new GsonBuilder();
-        final Gson gson = gsonBuilder.create();
+        // final GsonBuilder gsonBuilder = new GsonBuilder();
+        // final Gson gson = gsonBuilder.create();
 
         //// Serialize o objeto – Converta o objeto em uma string JSON
         String jsonString = gson.toJson(data);
@@ -79,6 +64,7 @@ public class testeSinc {
         //// Desserialize o objeto – Converta a string JSON de volta para o objeto`
         String json = gson.fromJson(jsonString, String.class);
         System.out.println("\nConverting JSON string to Person object:\n" + json.toString());
+
 
         // Mesma coisa que o fromJson faz.
         // System.out.println("\nStart point: \n" + jsonString);
@@ -95,13 +81,29 @@ public class testeSinc {
 
         System.out.println("\n");
         for (JsonElement element : jsons) {
-            EntityFeriaDTO person = gson.fromJson(element, EntityFeriaDTO.class);
-            System.out.println(person);
+            EntityFeriaDTO feriadosDTO = gson.fromJson(element, EntityFeriaDTO.class);
+            System.out.println(feriadosDTO.toString());
 
             // System.out.println(person.getDate().toString().trim());
             // System.out.println(person.getName().toString().trim());
             // System.out.println(person.getType().toString().trim());
         }
+
+
+        // String urlParaChamada = URL_POST ;
+        // URL url = new URL(urlParaChamada);
+        // HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+        //// Deserializa atraves do BufferedReader
+        // BufferedReader resposta = new BufferedReader(new
+        // InputStreamReader((conexao.getInputStream())));
+        // String jsonEmString = Util.converteJsonEmString(resposta);
+        // System.out.println("urlParaChamada: "+ jsonEmString);
+
+        // Type collectionType = new TypeToken<Collection<EntityFeriaDTO>>(){}.getType();
+        // Collection<EntityFeriaDTO> enums = gson.fromJson(jsonEmString, collectionType);
+        // System.out.println("enums" + enums);
+
+
 
 
         // JsonReader reader = new JsonReader(new StringReader(json));
