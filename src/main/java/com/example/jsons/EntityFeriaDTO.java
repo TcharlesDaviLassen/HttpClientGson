@@ -1,6 +1,9 @@
 package com.example.jsons;
 
 import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 public class EntityFeriaDTO {
@@ -16,7 +19,14 @@ public class EntityFeriaDTO {
     }
 
     public String getDate() {
-        return date;
+
+        String[] dados = date.split("-");
+        dados[0].toString();
+        dados[1].toString();
+        dados[2].toString();
+
+        return dados[2].toString()+"/"+dados[1].toString()+"/"+dados[0].toString();
+        
     }
 
     public void setDate(String date) {
@@ -51,7 +61,7 @@ public class EntityFeriaDTO {
 
     @Override
     public String toString() {
-        return Arrays.asList(String.valueOf(date), name, type).toString();
+        return Arrays.asList(getDate(), name, type).toString();
+      
     }
-
 }

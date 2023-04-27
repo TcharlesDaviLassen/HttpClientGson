@@ -9,6 +9,10 @@ import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 
 import com.google.gson.FieldNamingPolicy;
@@ -84,9 +88,9 @@ public class testeSinc {
             EntityFeriaDTO feriadosDTO = gson.fromJson(element, EntityFeriaDTO.class);
             System.out.println(feriadosDTO.toString());
 
-            // System.out.println(person.getDate().toString().trim());
-            // System.out.println(person.getName().toString().trim());
-            // System.out.println(person.getType().toString().trim());
+            // System.out.println(feriadosDTO.getDate());
+            // System.out.println(feriadosDTO.getName());
+            // System.out.println(feriadosDTO.getType());
         }
 
 
