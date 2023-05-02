@@ -1,26 +1,26 @@
 [
-    {
-       "updated_at":"2012-03-02 21:06:01",
-       "fetched_at":"2012-03-02 21:28:37.728840",
-       "description":null,
-       "language":null,
-       "title":"JOHN",
-       "url":"http://rus.JOHN.JOHN/rss.php",
-       "icon_url":null,
-       "logo_url":null,
-       "id":"4f4791da203d0c2d76000035",
-       "modified":"2012-03-02 23:28:58.840076"
-    },
-    {
-       "updated_at":"2012-03-02 14:07:44",
-       "fetched_at":"2012-03-02 21:28:37.033108",
-       "description":null,
-       "language":null,
-       "title":"PETER",
-       "url":"http://PETER.PETER.lv/rss.php",
-       "icon_url":null,
-       "logo_url":null,
-       "id":"4f476f61203d0c2d89000253",
-       "modified":"2012-03-02 23:28:57.928001"
-    }
- ]
+   {
+      "updated_at": "2012-03-02 21:06:01",
+      "fetched_at": "2012-03-02 21:28:37.728840",
+      "description": null,
+      "language": null,
+      "title": "JOHN",
+      "url": "http://rus.JOHN.JOHN/rss.php",
+      "icon_url": null,
+      "logo_url": null,
+      "id": "4f4791da203d0c2d76000035",
+      "modified": "2012-03-02 23:28:58.840076"
+   },
+   {
+      "updated_at": "2012-03-02 14:07:44",
+      "fetched_at": "2012-03-02 21:28:37.033108",
+      "description": null,
+      "language": null,
+      "title": "PETER",
+      "url": "http://PETER.PETER.lv/rss.php",
+      "icon_url": null,
+      "logo_url": null,
+      "id": "4f476f61203d0c2d89000253",
+      "modified": "2012-03-02 23:28:57.928001"
+   }
+]

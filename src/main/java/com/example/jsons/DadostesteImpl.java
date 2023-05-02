@@ -2,7 +2,7 @@ package com.example.jsons;
 
 import com.google.gson.annotations.SerializedName;
 
-public class dadostesteImpl {
+public class DadostesteImpl {
 
     @SerializedName("updated_at")
     private String updated_at;
