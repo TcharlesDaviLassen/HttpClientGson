@@ -1,4 +1,4 @@
-package com.example.jsons;
+package com.example.jsons.readerArq;
 
 import com.google.gson.annotations.SerializedName;
 
